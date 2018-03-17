@@ -18,14 +18,6 @@
 
 
 
----
-
-![52120842748](C:\Users\apen\AppData\Local\Temp\1521208427480.png)
-
----
-
-
-
 * Is it finite?
 
   If $S, Act, AP$ are finite
