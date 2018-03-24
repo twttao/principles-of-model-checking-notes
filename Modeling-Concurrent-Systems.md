@@ -88,12 +88,38 @@ In *Example 2.2,*  the outgoing states from the state ***select*** is non-determ
 
 
 
-##### 2. Modeling
+##### 2. Modeling Sequential Hardware Circuits
 
 * The book gives an example of "sequential hardware circuit", where $\lambda_y=\neg(x\oplus r)$ (output $y$ is the negation of the XOR of input $x$ and register $r$), and $\delta_r=x \vee r$ (register $r$ is determined by a disjunctive relationship between $x$ and itself).
 * Generally, a sequential hardware circuit with $n$ <u>input</u> bits, $m$ <u>output</u> bits, and $k$ <u>registers</u> can be represented by $TS=(S, Act, \rightarrow, I, AP, L)$
   * $S=Eval(x_1,...,x_n, r_1,...,r_k)$ ($Eval$ refers to the set of all possible pairs of $x$ and $r$; its size is $2^{n+k}$)
-  * $I=\{(a_1,...,a_n, c_{0,1},...,c_{0,k}\;|\;a_1,...,a_n\in \{0,1\}\}​$ ($c_{0,1},...,c_{0,k}​$ refers to "the $k​$ registers ... evaluated with their initial value")
+  * $I=\{(a_1,...,a_n, c_{0,1},...,c_{0,k}\;|\;a_1,...,a_n\in \{0,1\}\}$ ($c_{0,1},...,c_{0,k}$ refers to "the $k$ registers ... evaluated with their initial value")
   * $Act=\{\tau\}$ (action is irrelevant in our consideration)
   * $AP=\{x_1,...,x_n,y_1,...y_m,r_1,...,r_k\}$ (valid values of $x$, $y$, and $r$, a subset of all possible cases)
 
+
+
+
+**3. Modeling Data-dependent Systems**
+
+* Basics
+  * $Var$ is a set of typed variables
+  * $dom(x)$ refers to the type of $x$
+  * $Eval(Var)​$ is the set of evaluations that assigns to variables
+  * $Cond(Var)$ is the set of boolean conditions over $Var$ (propositional logic formula)
+  * $Effect: Act \times Eval(Var) \to Eval(Var)​$: the first $Eval(Var)​$ is current variable values; the second $Eval(Var)​$ are future values given some specific $Act​$
+
+
+
+
+* Program Graph (PG)
+
+
+  * $Loc$ is the set of locations: nodes of the graph; indicates all reachable states of variables
+  * $Act$ is the set of actions
+  * $Effect: Act \times Eval(Var) \to Eval(Var)$
+  * $\hookrightarrow \subseteq Loc \times Cond(Var) \times Act \times Loc$: the conditional transition relation
+    *  "given some location, when some condition satisfies $\eta \vDash g$, go to another location under some action, that produces new variable evaluations $Effect(\alpha, \cdot)$"
+    * $Cond(Var) \times Act$ is ;  $Loc \times Loc$ is $l \hookrightarrow l'$
+  * $Loc_0 \subseteq Loc$: initial locations
+  * $g_0\in Cond(Var)$ initial condition
