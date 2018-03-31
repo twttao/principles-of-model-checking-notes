@@ -106,8 +106,8 @@ In *Example 2.2,*  the outgoing states from the state ***select*** is non-determ
   * $Var$ is a set of typed variables
   * $dom(x)$ refers to the type of $x$
   * $Eval(Var)​$ is the set of evaluations that assigns to variables
-  * $Cond(Var)$ is the set of boolean conditions over $Var$ (propositional logic formula)
-  * $Effect: Act \times Eval(Var) \to Eval(Var)​$: the first $Eval(Var)​$ is current variable values; the second $Eval(Var)​$ are future values given some specific $Act​$
+  * $Cond(Var)​$ is the set of boolean conditions over $Var​$ (propositional logic formula)
+  * $Effect: Act \times Eval(Var) \to Eval(Var)$: the first $Eval(Var)$ is current variable values; the second $Eval(Var)$ are future values given some specific $Act$
 
 
 
@@ -120,6 +120,7 @@ In *Example 2.2,*  the outgoing states from the state ***select*** is non-determ
   * $Effect: Act \times Eval(Var) \to Eval(Var)$
   * $\hookrightarrow \subseteq Loc \times Cond(Var) \times Act \times Loc$: the conditional transition relation
     *  "given some location, when some condition satisfies $\eta \vDash g$, go to another location under some action, that produces new variable evaluations $Effect(\alpha, \cdot)$"
-    * $Cond(Var) \times Act$ is ;  $Loc \times Loc$ is $l \hookrightarrow l'$
+    *  $Cond(Var) \times Act$ is $g: \alpha$;  $Loc \times Loc$ is $l \hookrightarrow l'$
   * $Loc_0 \subseteq Loc$: initial locations
   * $g_0\in Cond(Var)$ initial condition
+
