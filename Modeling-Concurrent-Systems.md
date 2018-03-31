@@ -34,9 +34,9 @@
 
 
 > Insights 1
-
+>
 > Non-determinism is speaking from an internal perspective with regard to the system 
-
+>
 > In *Example 2.2,*  the outgoing states from the state ***select*** is non-deterministic only because there is no way for the system *itself* to determine what drink will be selected. However, it does not mean the event is random at a fundamental level. For the user of the beverage vending machine, the process of selecting a drink is quite deterministic. This is referred to as "underspecification" in the book.
 
 
@@ -119,3 +119,31 @@
     * $Loc_0 \subseteq Loc$: initial locations
     * $g_0\in Cond(Var)$ initial condition
 
+
+
+> Beverage vending machine example
+>
+> $Var = \{nsoda, nbeer\}$ (variables keeping track of the number of beverages)
+>
+> $Act=\{bget, sget,coin,ret\_coin,refill\}$ (transition events)
+>
+> $Effect(coin, \eta) = \eta$ (state mutation formula)
+>
+> $Effect(ref\_coin, \eta)= \eta$
+>
+> $Effect(sget, \eta)=\eta[nsoda:=nsoda-1]$
+>
+> $Effect(bget, \eta)=\eta[nbeer:=nbeer-1]$
+>
+> $Effect(refill, \eta)=[nsoda:=max,nbeer:=max]$
+
+
+
+* Transition System of Program Graphs
+  * $PG=(Loc, Act, Effect,\hookrightarrow, Loc_0,g_0)$
+  * $TS(PG)=(S,Act,\to,I,AP,L)$
+    * $S=Loc\times Eval(Var)$ OR $\langle\;l,\eta \;\rangle$ are the locations
+    * $\to \subseteq S\times Act \times S$ is $\dfrac{l\hookrightarrow^{g:\alpha} l'\;\wedge\; \eta \vDash g}{\langle\;l, \eta\;\rangle \xrightarrow{\alpha} \langle\;l', Effect(\alpha, \eta)\;\rangle}$ are the transition rules
+    * $I=\{\langle\;l,\eta\;\rangle\;|\;l\in Loc_0, \eta \vDash g_0\}$ are initial states
+    * $AP=Loc\cup Cond(Var)$ are propositions about locations and variable values
+    * $L(\langle\;l,\eta\;\rangle)=\{l\}\cup \{g\in Cond(Var)\;|\;\eta\vDash g\}$ means given some location, it is both true that it is at $l$ and that some formulae $g$ is true about the variables
