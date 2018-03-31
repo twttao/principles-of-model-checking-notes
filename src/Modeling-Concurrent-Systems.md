@@ -1,7 +1,5 @@
 ### Modeling Concurrent Systems
 
-
-
 ##### 1. Transition Systems
 
 * Definition
@@ -147,3 +145,5 @@
     * $I=\{\langle\;l,\eta\;\rangle\;|\;l\in Loc_0, \eta \vDash g_0\}$ are initial states
     * $AP=Loc\cup Cond(Var)$ are propositions about locations and variable values
     * $L(\langle\;l,\eta\;\rangle)=\{l\}\cup \{g\in Cond(Var)\;|\;\eta\vDash g\}$ means given some location, it is both true that it is at $l$ and that some formulae $g$ is true about the variables
+
+---
