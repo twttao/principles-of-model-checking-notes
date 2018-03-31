@@ -4,9 +4,9 @@
 
 ##### 1. Transition Systems
 
-* What is?
+* Definition
 
-  A transition system is a seven tuple $(S, Act, \rightarrow, I, AP, L)$.
+  A transition system is a seven tuple $(S, Act, \rightarrow, I, AP, L)$
 
   * $S$ is the set of states
   * $Act​$ is the set of actions
@@ -20,7 +20,7 @@
 
 * Is it finite?
 
-  If $S, Act, AP$ are finite
+  If $S, Act, AP$ are finite, ...
 
 
 
@@ -33,15 +33,11 @@
 
 
 
----
+> Insights 1
 
-Insights 1
+> Non-determinism is speaking from an internal perspective with regard to the system 
 
-`Non-determinism is speaking from an internal perspective with regard to the system `
-
-In *Example 2.2,*  the outgoing states from the state ***select*** is non-deterministic only because there is no way for the system *itself* to determine what drink will be selected. However, it does not mean the event is random at a fundamental level. For the user of the beverage vending machine, the process of selecting a drink is quite deterministic. This is referred to as "underspecification" in the book.
-
----
+> In *Example 2.2,*  the outgoing states from the state ***select*** is non-deterministic only because there is no way for the system *itself* to determine what drink will be selected. However, it does not mean the event is random at a fundamental level. For the user of the beverage vending machine, the process of selecting a drink is quite deterministic. This is referred to as "underspecification" in the book.
 
 
 
@@ -75,8 +71,8 @@ In *Example 2.2,*  the outgoing states from the state ***select*** is non-determ
   * Finite: $\varrho=s_0\alpha_1s_1\alpha_2...\alpha_ns_n$, for all $0 \leq i < n$ 
     * OR $\varrho=s_o \xrightarrow{\alpha_1}...\xrightarrow{a_n} s_n$
 
-    * Infinite: $\rho = s_0\alpha_1s_1\alpha_2s_2\alpha_3...$ , for all $i \geq 0$, $s_i\xrightarrow{a_{i+1}}s_{i+1}$
-      * OR $\rho = s_o\xrightarrow{\alpha_1}s_1\xrightarrow{\alpha_2}...$
+  * Infinite: $\rho = s_0\alpha_1s_1\alpha_2s_2\alpha_3...$ , for all $i \geq 0$, $s_i\xrightarrow{a_{i+1}}s_{i+1}$
+    * OR $\rho = s_o\xrightarrow{\alpha_1}s_1\xrightarrow{\alpha_2}...$
 
 
 
@@ -114,13 +110,12 @@ In *Example 2.2,*  the outgoing states from the state ***select*** is non-determ
 
 * Program Graph (PG)
 
-
-  * $Loc$ is the set of locations: nodes of the graph; indicates all reachable states of variables
-  * $Act$ is the set of actions
-  * $Effect: Act \times Eval(Var) \to Eval(Var)$
-  * $\hookrightarrow \subseteq Loc \times Cond(Var) \times Act \times Loc$: the conditional transition relation
-    *  "given some location, when some condition satisfies $\eta \vDash g$, go to another location under some action, that produces new variable evaluations $Effect(\alpha, \cdot)$"
-    *  $Cond(Var) \times Act$ is $g: \alpha$;  $Loc \times Loc$ is $l \hookrightarrow l'$
-  * $Loc_0 \subseteq Loc$: initial locations
-  * $g_0\in Cond(Var)$ initial condition
+    * $Loc$ is the set of locations: nodes of the graph; indicates all reachable states of variables
+    * $Act$ is the set of actions
+    * $Effect: Act \times Eval(Var) \to Eval(Var)$
+    * $\hookrightarrow \subseteq Loc \times Cond(Var) \times Act \times Loc$: the conditional transition relation
+  *  "given some location, when some condition satisfies $\eta \vDash g$, go to another location under some action, that produces new variable evaluations $Effect(\alpha, \cdot)$"
+  * $Cond(Var) \times Act$ is $g: \alpha$;  $Loc \times Loc$ is $l \hookrightarrow l'$
+    * $Loc_0 \subseteq Loc$: initial locations
+    * $g_0\in Cond(Var)$ initial condition
 
