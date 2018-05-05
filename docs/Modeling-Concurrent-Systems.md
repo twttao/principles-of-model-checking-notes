@@ -94,7 +94,7 @@
 
 
 
-**3. Modeling Data-dependent Systems**
+##### 3. Modeling Data-dependent Systems
 
 * Basics
   * $Var$ is a set of typed variables
