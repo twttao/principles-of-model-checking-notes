@@ -42,10 +42,12 @@
 * Direct predecessors and successors
   * Direct successors for some action ($\alpha$-successor): $Post(s, a)=\{s' \in S\;|\;s \xrightarrow{a} s'\}$
   * All direct successors of a state: $Post(s)=\cup_{\alpha \in Act} Post(s, \alpha)$
-  * Additionally, $Post(C, \alpha)=\cup_{s\in C} Post(s,\alpha)$, $Post(C)=\cup_{s\in C} Post(s)$
-  * Similarly, $Pre(C,\alpha)=\cup_{s\in C} Pre(s, \alpha)$, $Pre(C)=\cup_{s\in C}Pre(s)$
-
-
+  * Additionally,
+     * $Post(C,\alpha)=\cup_{s\in C} Post(s,\alpha)$
+     * $Post(C)=\cup_{s\in C} Post(s)$
+  * Similarly,
+     * $Pre(C,\alpha)=\cup_{s\in C} Pre(s, \alpha)$
+     * $Pre(C)=\cup_{s\in C}Pre(s)$
 
 
 
@@ -69,8 +71,8 @@
   * Finite: $\varrho=s_0\alpha_1s_1\alpha_2...\alpha_ns_n$, for all $0 \leq i < n$ 
     * OR $\varrho=s_o \xrightarrow{\alpha_1}...\xrightarrow{a_n} s_n$
 
-  * Infinite: $\rho = s_0\alpha_1s_1\alpha_2s_2\alpha_3...$ , for all $i \geq 0$, $s_i\xrightarrow{a_{i+1}}s_{i+1}$
-    * OR $\rho = s_o\xrightarrow{\alpha_1}s_1\xrightarrow{\alpha_2}...$
+  * Infinite: $\rho = s_0\alpha_1s_1\alpha_2s_2\alpha_3...$,
+    * $\rho = s_o\xrightarrow{\alpha_1}s_1\xrightarrow{\alpha_2}...$
 
 
 
@@ -87,7 +89,7 @@
 * The book gives an example of "sequential hardware circuit", where $\lambda_y=\neg(x\oplus r)$ (output $y$ is the negation of the XOR of input $x$ and register $r$), and $\delta_r=x \vee r$ (register $r$ is determined by a disjunctive relationship between $x$ and itself).
 * Generally, a sequential hardware circuit with $n$ <u>input</u> bits, $m$ <u>output</u> bits, and $k$ <u>registers</u> can be represented by $TS=(S, Act, \rightarrow, I, AP, L)$
   * $S=Eval(x_1,...,x_n, r_1,...,r_k)$ ($Eval$ refers to the set of all possible pairs of $x$ and $r$; its size is $2^{n+k}$)
-  * $I=\{(a_1,...,a_n, c_{0,1},...,c_{0,k}\;|\;a_1,...,a_n\in \{0,1\}\}$ ($c_{0,1},...,c_{0,k}$ refers to "the $k$ registers ... evaluated with their initial value")
+  * $I$ refers to "the $k$ registers ... evaluated with their initial value"
   * $Act=\{\tau\}$ (action is irrelevant in our consideration)
   * $AP=\{x_1,...,x_n,y_1,...y_m,r_1,...,r_k\}$ (valid values of $x$, $y$, and $r$, a subset of all possible cases)
 
